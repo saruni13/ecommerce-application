@@ -1,15 +1,10 @@
-# Overview
-This project involved the containerization and deployment of a full-stack yolo application using Docker.
+E-Commerce Dashboard Application
 
+This repository contains a Dockerized e-commerce application that has been deployed on a Amazon web services (AWS) cluster. The application includes a frontend built with React, a backend using Node.js, and MongoDB as the database.
 
 # Requirements
 Install the docker engine here:
 - [Docker](https://docs.docker.com/engine/install/) 
 
-## How to launch the application 
 
 
-![Alt text](image.png)
-
-## How to run the app
-Use vagrant up --provison command
