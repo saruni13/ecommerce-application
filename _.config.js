@@ -1,0 +1,1 @@
+const dbURL =mongodb+srv://timothysaruni13:<db_password>@ecommerce1.yjri4db.mongodb.net/?retryWrites=true&w=majority&appName=Ecommerce1
