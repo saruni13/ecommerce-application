@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    depends_on:
+      - mongo
+    environment:
+     dbURL =mongodb+srv://timothysaruni13:Traviscot38!@ecommerce1.yjri4db.mongodb.net/?retryWrites=true&w=majority&appName=Ecommerce1
+    networks:
+      - backend
+
+  mongo:
+    image: mongo:5
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - backend
+
+volumes:
+  mongo-data:
+
+networks:
+  backend:
