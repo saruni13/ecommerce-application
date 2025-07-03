@@ -164,4 +164,53 @@ So, 0644 means:
   Vagrantfile: Configure Vagrant to use the ubuntu/jammy64 box and run Ansible provisioning.
 
   vars.yml: used to define variables network, volume, images and ports 
- 
+ ## Running the Application
+    
+      vagrant up
+  
+  ### Screenshot after running vagrant up you should see
+
+      
+
+![Screenshot from 2024-08-05 23-22-08](https://github.com/user-attachments/assets/8f19f734-7376-4caf-ac8e-b5036becbca8)
+
+
+# IP4 Orchestration
+
+## The project structure in orchestration 
+
+      ├── /manifests
+      │   ├── /deployment
+      │   │   ├── yolo-backend-deployment.yaml
+      │   │   └── yolo-frontend-deployment.yaml
+      │   │
+      │   ├── /headless-service
+      │   │   └── mongo-headless-service.yaml
+      │   │
+      │   ├── /secrets
+      │   │   └── mongo-secret.yaml
+      │   │
+      │   ├── /service
+      │   │   ├── yolo-backend-service.yaml
+      │   │   └── yolo-frontend-service.yaml
+      │   │
+      │   ├── /statefulset
+      │   │   └── mongo-statefulset.yaml
+
+## Prerequisites
+Before you begin, ensure you have the following tools installed:
+
+kubectl - Command-line tool for interacting with the Kubernetes API.
+
+gcloud - Command-line tool for Google Cloud Platform (GCP).
+
+Docker - Containerization platform.
+
+### Successful GCP configuration screenshot
+
+![Screenshot from 2024-08-19 19-48-07](https://github.com/user-attachments/assets/ec7cf614-6e75-42c2-ae8c-d796de4ef59c)
+
+![Screenshot from 2024-08-19 19-59-33](https://github.com/user-attachments/assets/a3828c5a-68dc-44a4-bf3a-4bd0ae0414d0)
+
+
+#### For detailed explanation to achieve orchestration kindly see orchestration-explanation.md file
