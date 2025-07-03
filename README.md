@@ -32,7 +32,7 @@ Install the docker engine here:
 - Clone this repository to your local machine
 
   
-  git clone https://github.com/bryanphilips/yolo.git
+  git clone git@github.com:saruni13/ecommerce-application.git
   
 
 - Navigate to the root directory of your cloned repository
