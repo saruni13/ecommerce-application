@@ -62,7 +62,7 @@ Install the docker engine here:
 
 
 ## The Docker images used in this application are sourced from this repository
-(https://hub.docker.com/repositories/p801)
+(https://hub.docker.com/repositories/saruni)
 
 #### The backend repository on dockerhub
 
@@ -85,7 +85,7 @@ docker images
 ## Approach
 I have cloned the github repository
  
-        https://github.com/bryanphilips/yolo.git
+        https://github.com/saruni13/ecommerce-application.git
 
 
 ### Security Improvements
@@ -206,11 +206,5 @@ gcloud - Command-line tool for Google Cloud Platform (GCP).
 
 Docker - Containerization platform.
 
-### Successful GCP configuration screenshot
-
-![Screenshot from 2024-08-19 19-48-07](https://github.com/user-attachments/assets/ec7cf614-6e75-42c2-ae8c-d796de4ef59c)
-
-![Screenshot from 2024-08-19 19-59-33](https://github.com/user-attachments/assets/a3828c5a-68dc-44a4-bf3a-4bd0ae0414d0)
-
-
+<!--  
 #### For detailed explanation to achieve orchestration kindly see orchestration-explanation.md file
