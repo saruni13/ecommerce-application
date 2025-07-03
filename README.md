@@ -22,7 +22,7 @@ Run the folllowing command to install the dependencies
 npm install
 
 Node version
-The client uses an older version of Node, v14, after installing your dependencies, make the following changes to your package.json
+The client uses an older version of Node, v20, after installing your dependencies, make the following changes to your package.json
 "scripts": { "start": "NODE_OPTIONS=--openssl-legacy-provider react-scripts start", "build": "NODE_OPTIONS=--openssl-legacy-provider react-scripts build", "test": "react-scripts test", "eject": "react-scripts eject" },
 
 Run the folllowing to start the app
