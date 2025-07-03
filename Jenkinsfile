@@ -1,29 +1,50 @@
 pipeline {
-  agent any
+    agent any
 
-  environment {
-    MONGO_URI = credentials('mongo-uri') // If using Jenkins credentials store
-    RENDER_URL = 'https://your-app.onrender.com' // Replace with your URL
-  }
-
-  stages {
-    stage('Install') {
-      steps {
-        sh 'npm install'
-      }
+    environment {
+        DOCKER_IMAGE = 'node:20' // Base Docker image for building
+        APP_NAME = 'my-app'
     }
 
-    stage('Build & Deploy') {
-      steps {
-        sh 'node server.js &'
-        // Add render deploy script here if any, or manual Render deploy
-      }
-    }
-  }
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/saruni13/ecommerce-application.git'
+            }
+        }
 
-   post {
-    always {
-      echo 'Pipeline finished.'
+        stage('Build') {
+            steps {
+                script {
+                    docker.build("$APP_NAME:latest")
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                script {
+                    docker.withRegistry('', 'dockerhub_credentials') {
+                        docker.image("$APP_NAME:latest").push()
+                    }
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                // Example deployment step (modify based on your deployment needs)
+                sh 'docker-compose up -d'
+            }
+        }
     }
-  }
+
+    post {
+        success {
+            echo 'Pipeline successful!'
+        }
+        failure {
+            echo 'Pipeline failed :('
+        }
+    }
 }
