@@ -52,3 +52,78 @@ Install the docker engine here:
 
 #### Screenshot after adding products
 ![yolo product persistent](https://github.com/user-attachments/assets/3113fc67-0c62-4195-b40b-94c1d87a8d66)
+
+## How to stop the application
+- Navigate back to your terminal and press "ctrl+c" 
+
+## How to terminate the application completely
+ 
+ docker-compose down
+
+
+## The Docker images used in this application are sourced from this repository
+(https://hub.docker.com/repositories/p801)
+
+#### The backend repository on dockerhub
+
+docker pull p801/yolo-backend-app:V5.1
+
+#### The frontend repository on dockerhub
+ 
+docker pull p801/yolo-app-frontend:V1.0
+
+#### Copy the command below to find out the image size after successful docker pull
+
+docker images
+
+#### You should see something similar to this 
+![dockerimages size](https://github.com/user-attachments/assets/ac9e91ea-9fcc-4ec7-9e9c-ceaecf2a8666)
+
+
+# IP3 Configuration Management 
+
+## Approach
+I have cloned the github repository
+ 
+        https://github.com/bryanphilips/yolo.git
+
+
+### Security Improvements
+
+#### hosts file
+Created the hosts file with custom service hostname that can show mapping of the ip to a name then asign the name in the main.yml file 
+
+#### update of the playbook.yml
+
+The playbook.yml where we have  
+  name: Copy hosts file      
+      copy:   
+
+        src: hosts
+
+        dest: /etc/hosts
+
+        owner: root
+
+        group: root
+
+        mode: "0644"
+
+  In the mode: '0644' setting:
+
+      0 - No special permissions  are set.
+
+      6 - The owner of the file has read and write permissions (rw-).
+
+      4 - The group has read-only permissions (r--).
+
+      4 - Others have read-only permissions (r--).
+
+
+So, 0644 means:
+
+      Owner: Read and write
+
+      Group: Read only
+
+      Others: Read only
